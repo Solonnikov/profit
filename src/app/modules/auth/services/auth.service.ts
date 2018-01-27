@@ -12,4 +12,7 @@ export class AuthService {
     localStorage.setItem('user', JSON.stringify(user));
   }
 
+  getRegisteredUser() {
+    return localStorage.getItem('user');
+  }
 }

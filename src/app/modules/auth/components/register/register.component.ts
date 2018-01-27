@@ -55,6 +55,6 @@ export class RegisterComponent implements OnInit, OnChanges {
     this.flashMessagesService.show('You are now registered and can log in', {
       classes: ['alert', 'alert-success']
     });
-    // this.router.navigate(['admin/login']);
+    this.router.navigate(['admin/login']);
   }
 }

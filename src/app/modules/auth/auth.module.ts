@@ -8,13 +8,11 @@ import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 import { AuthService } from './services/auth.service';
-import { FlashMessagesModule} from 'ngx-flash-messages';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
-    FlashMessagesModule,
     ReactiveFormsModule,
     RouterModule.forChild([
       { path: 'register', component: RegisterComponent },
