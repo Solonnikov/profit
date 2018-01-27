@@ -31,7 +31,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     HttpClientModule,
     RouterModule.forRoot([
       { path: '', component: PostsComponent },
-      // {path: 'admin', loadChildren: './modules/auth/auth.module#AuthModule'}
+      { path: 'admin', loadChildren: './modules/auth/auth.module#AuthModule' }
     ]),
   ],
   providers: [PostsService],
