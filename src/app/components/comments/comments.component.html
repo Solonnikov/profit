@@ -1,0 +1,4 @@
+<app-comment *ngFor="let comment of comments" [comment]="comment"></app-comment>
+<div class="container p-4">
+  <app-add-comment (commentAdded)="addComment($event)"></app-add-comment>
+</div>
