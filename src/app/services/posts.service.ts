@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Post } from '../models/Post';
-import { Comment } from '../models/Comment';
 
 @Injectable()
 export class PostsService {

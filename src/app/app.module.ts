@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { PostsService } from './services/posts.service';
+import { FlashMessagesModule} from 'ngx-flash-messages';
 
 import { AppComponent } from './app.component';
 import { AddCommentComponent } from './components/add-comment/add-comment.component';
@@ -29,6 +30,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    FlashMessagesModule,
     RouterModule.forRoot([
       { path: '', component: PostsComponent },
       { path: 'admin', loadChildren: './modules/auth/auth.module#AuthModule' }
