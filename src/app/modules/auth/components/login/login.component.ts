@@ -48,21 +48,28 @@ export class LoginComponent implements OnInit, OnChanges {
     const registeredUser = JSON.parse(this.authService.getRegisteredUser())
 
     // Check if email and password are valid
-    if (user.email === registeredUser.email && user.password === registeredUser.password) {
-      this.flashMessagesService.show('You are now logged in', {
-        classes: ['alert', 'alert-success']
-      });
-      const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ';
-      localStorage.setItem('token', token);
+    if (registeredUser !== null) {
+      if (registeredUser.email === registeredUser.email && user.password === registeredUser.password) {
+        this.flashMessagesService.show('You are now logged in', {
+          classes: ['alert', 'alert-success']
+        });
+        // Set fake token
+        const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ';
+        localStorage.setItem('token', token);
 
-      this.router.navigate(['admin/dashboard']);
+        this.router.navigate(['admin/dashboard']);
 
-    } else if (user.email !== registeredUser.email) {
-      this.flashMessagesService.show('Wrong email', {
-        classes: ['alert', 'alert-danger']
-      });
-    } else if (user.password !== registeredUser.password) {
-      this.flashMessagesService.show('Wrong password', {
+      } else if (registeredUser.email !== null && user.email !== registeredUser.email) {
+        this.flashMessagesService.show('Wrong email', {
+          classes: ['alert', 'alert-danger']
+        });
+      } else if (registeredUser.password !== null && user.password !== registeredUser.password) {
+        this.flashMessagesService.show('Wrong password', {
+          classes: ['alert', 'alert-danger']
+        });
+      }
+    } else {
+      this.flashMessagesService.show('No user found. Please register first.', {
         classes: ['alert', 'alert-danger']
       });
     }

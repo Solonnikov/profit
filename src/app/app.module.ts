@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { PostsService } from './services/posts.service';
 import { FlashMessagesModule} from 'ngx-flash-messages';
+import { AuthService} from './modules/auth/services/auth.service';
 
 import { AppComponent } from './app.component';
 import { AddCommentComponent } from './components/add-comment/add-comment.component';
@@ -36,7 +37,10 @@ import { NavbarComponent } from './components/navbar/navbar.component';
       { path: 'admin', loadChildren: './modules/auth/auth.module#AuthModule' }
     ]),
   ],
-  providers: [PostsService],
+  providers: [
+    PostsService,
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

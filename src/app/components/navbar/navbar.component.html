@@ -15,14 +15,17 @@
     </ul>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" href="admin/register">Register</a>
+        <a class="nav-link" *ngIf="!authService.loggedIn()" href="admin/register">Register</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="admin/login">Login</a>
+        <a class="nav-link" *ngIf="!authService.loggedIn()" href="admin/login">Login</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/admin/dashboard">Dashboard</a>
+        <a class="nav-link" *ngIf="authService.loggedIn()" href="/admin/dashboard">Dashboard</a>
       </li>
+      <li class="nav-item">
+          <a class="nav-link" *ngIf="authService.loggedIn()" (click)="logout()">Log Out</a>
+        </li>
     </ul>
   </div>
 </nav>

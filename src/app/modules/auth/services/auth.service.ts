@@ -15,4 +15,14 @@ export class AuthService {
   getRegisteredUser() {
     return localStorage.getItem('user');
   }
+
+  loggedIn() {
+    if(localStorage.getItem('token') !== null) {
+      return true;
+    }
+  }
+
+  logout() {
+    localStorage.removeItem('token');
+  }
 }
