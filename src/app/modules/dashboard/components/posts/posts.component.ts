@@ -16,7 +16,7 @@ export class PostsComponent implements OnInit {
 
   ngOnInit() {
     this.adminPostService.stateClear.subscribe(clear => {
-      if(clear) {
+      if (clear) {
         this.selectedPost = {
           id: '',
           title: '',

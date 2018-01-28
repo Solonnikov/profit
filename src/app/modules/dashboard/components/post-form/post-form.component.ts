@@ -37,8 +37,6 @@ export class PostFormComponent implements OnInit {
         body: this.body
       }
 
-      console.log(newPost);
-
       // Add Post
       this.adminPostService.addPost(newPost);
     } else {

@@ -4,7 +4,7 @@
       <input type="text" class="form-control" name="title" [(ngModel)]="title" placeholder="Add a Title...">
     </div>
     <textarea class="form-control" rows="5" cols="100" placeholder="Add a Text..." name="body" [(ngModel)]="body"></textarea>
-    <input type="submit" value="Add a Post" class="btn btn-success mt-3" [disabled]="!this.title">
+    <input type="submit" value="Add a Post" class="btn btn-success mt-3" [disabled]="!this.title || !this.body">
     <button (click)="clearState()" type="button" class="btn btn-warning mt-3" [hidden]="!this.title">Clear</button>
   </form>
 </div>
