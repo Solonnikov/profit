@@ -1,11 +1,21 @@
-<div *ngFor="let post of posts" (click)="onSelect(post)" class="card card-body">
-  <div class="card-header d-flex justify-content-between align-items-center">
+<div *ngIf="loaded && posts.length > 0">
+  <div *ngFor="let post of posts" (click)="onSelect(post)" class="card card-body" [class.list-group-item-success]="selectedPost===post">
+    <div class="card-header d-flex justify-content-between align-items-center">
       <img class="mr-3" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStwZV94rg3sI8xisf6Jvl-ab1RN-jhkdQcTBDiUXkQiV9pwsWeOQ"
-      style="width:50px" alt="Generic placeholder image">
-    <h6 href="#" class="mb-0">{{post.title}}</h6>
-    <i (click)="onDelete(post)" class="fa fa-remove"></i>
-  </div>
-  <div class="card-text p-3">
+        style="width:50px" alt="Generic placeholder image">
+      <h6 href="#" class="mb-0 text-left">{{post.title}}</h6>
+      <i (click)="onDelete(post)" class="fa fa-remove"></i>
+    </div>
+    <div class="card-text p-3">
       <p class="mb-0">{{post.body}}</p>
+    </div>
   </div>
+</div>
+
+<div *ngIf="loaded && posts.length == 0">
+  <h5>There are no posts. Add some.</h5>
+</div>
+
+<div *ngIf="!loaded">
+  <h5>Loading...</h5>
 </div>

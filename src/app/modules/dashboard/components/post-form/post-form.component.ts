@@ -51,7 +51,18 @@ export class PostFormComponent implements OnInit {
       // Update Post
       this.adminPostService.updatePost(updatedPost);
     }
+
+    this.clearState();
   }
+
+  // Clear State
+  clearState() {
+    this.isNew = true;
+    this.id = '';
+    this.title = '';
+    this.body = '';
+    this.adminPostService.clearState();
+  };
 
   // Generate ID
   generateId() {
