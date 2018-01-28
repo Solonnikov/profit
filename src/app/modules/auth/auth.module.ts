@@ -5,7 +5,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './guards/auth.guard';
@@ -18,13 +17,12 @@ import { AuthGuard } from './guards/auth.guard';
     RouterModule.forChild([
       { path: 'register', component: RegisterComponent },
       { path: 'login', component: LoginComponent },
-      { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+      { path: 'dashboard', loadChildren: '../dashboard/dashboard.module#DashboardModule' }
     ])
   ],
   declarations: [
     RegisterComponent,
-    LoginComponent,
-    DashboardComponent
+    LoginComponent
   ],
   providers: [
     AuthService,

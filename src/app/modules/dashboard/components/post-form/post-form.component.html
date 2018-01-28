@@ -1,9 +1,10 @@
-<div class="card card-body">
-  <form>
+<div class="card card-body mb-3">
+  <form (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <input type="text" class="form-control" placeholder="Add a Post...">
+      <input type="text" class="form-control" name="title" [(ngModel)]="title" placeholder="Add a Title...">
     </div>
-    <input type="submit" value="Add a Post" class="btn btn-success" [disabled]="!this.text">
-    <button type="button" class="btn btn-warning" [hidden]="!this.text">Clear</button>
+    <textarea class="form-control" rows="5" cols="100" placeholder="Add a Text..." name="body" [(ngModel)]="body"></textarea>
+    <input type="submit" value="Add a Post" class="btn btn-success mt-3" [disabled]="!this.title">
+    <button type="button" class="btn btn-warning mt-3" [hidden]="!this.title">Clear</button>
   </form>
 </div>

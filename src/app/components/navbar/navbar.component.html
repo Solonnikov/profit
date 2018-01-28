@@ -21,7 +21,7 @@
         <a class="nav-link" *ngIf="!authService.loggedIn()" href="admin/login">Login</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" *ngIf="authService.loggedIn()" href="/admin/dashboard">Dashboard</a>
+        <a class="nav-link" *ngIf="authService.loggedIn()" href="admin/dashboard">Dashboard</a>
       </li>
       <li class="nav-item">
           <a class="nav-link" *ngIf="authService.loggedIn()" (click)="logout()">Log Out</a>

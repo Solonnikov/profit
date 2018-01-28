@@ -5,8 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { PostsService } from './services/posts.service';
-import { FlashMessagesModule} from 'ngx-flash-messages';
-import { AuthService} from './modules/auth/services/auth.service';
+import { FlashMessagesModule } from 'ngx-flash-messages';
+import { AuthService } from './modules/auth/services/auth.service';
 
 import { AppComponent } from './app.component';
 import { AddCommentComponent } from './components/add-comment/add-comment.component';
